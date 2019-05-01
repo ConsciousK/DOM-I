@@ -78,3 +78,14 @@ let bottomcontent = document.querySelectorAll('.bottom-content .text-content p')
 bottomcontent[0].textContent = "Services content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis."
 bottomcontent[1].textContent = "Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis."
 bottomcontent[2].textContent = "Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis."
+
+let contactheader = document.querySelector('.contact h4')
+contactheader.textContent = 'Contact'
+
+let contactinfo = document.querySelectorAll('.contact p')
+contactinfo[0].innerHTML = "123 Way 456 Street" + `<br />` + "Somewhere, USA"
+contactinfo[1].textContent = "1 (888) 888-8888"
+contactinfo[2].textContent = "sales@greatidea.io"
+
+let footer = document.querySelector('footer p')
+footer.textContent = (siteContent['footer']['copyright'])
