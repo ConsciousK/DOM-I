@@ -41,13 +41,20 @@ const siteContent = {
 let logo = document.getElementById("logo-img")
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
-let navitems = document.querySelectorAll('a')
-navitems[0].textContent = (siteContent['nav']['nav-item-1'])
-navitems[1].textContent = (siteContent['nav']['nav-item-2'])
-navitems[2].textContent = (siteContent['nav']['nav-item-3'])
-navitems[3].textContent = (siteContent['nav']['nav-item-4'])
-navitems[4].textContent = (siteContent['nav']['nav-item-5'])
-navitems[5].textContent = (siteContent['nav']['nav-item-6'])
+let navItems = document.querySelectorAll('a')
+
+for (let i = 0; i < navItems.length; i++){
+  navItems[i].textContent = (siteContent['nav'][`nav-item-${i+1}`])
+}
+console.log(navItems);
+
+
+//navitems[0].textContent = (siteContent['nav']['nav-item-1'])
+//navitems[1].textContent = (siteContent['nav']['nav-item-2'])
+//navitems[2].textContent = (siteContent['nav']['nav-item-3'])
+//navitems[3].textContent = (siteContent['nav']['nav-item-4'])
+//navitems[4].textContent = (siteContent['nav']['nav-item-5'])
+//navitems[5].textContent = (siteContent['nav']['nav-item-6'])
 
 let headerimage = document.getElementById('cta-img')
 headerimage.setAttribute('src', siteContent['cta']['img-src'])
