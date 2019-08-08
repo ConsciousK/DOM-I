@@ -45,8 +45,12 @@ let navItems = document.querySelectorAll('a')
 
 for (let i = 0; i < navItems.length; i++){
   navItems[i].textContent = (siteContent['nav'][`nav-item-${i+1}`])
+  navItems[i].style.color = "green"
 }
 console.log(navItems);
+
+
+
 
 let headerimage = document.getElementById('cta-img')
 headerimage.setAttribute('src', siteContent['cta']['img-src'])
