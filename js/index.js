@@ -9,7 +9,7 @@ const siteContent = {
     "img-src": "img/logo.png"
   },
   "cta": {
-    "h1": "DOM Is Awesome",
+    "h1": `DOM<br /> Is<br /> Awesome`,
     "button": "Get Started",
     "img-src": "img/header-img.png"
   },
@@ -28,7 +28,7 @@ const siteContent = {
   },
   "contact": {
     "contact-h4" : "Contact",
-    "address" : "123 Way 456 Street Somewhere, USA",
+    "address" : `123 Way 456 Street <br /> Somewhere, USA`,
     "phone" : "1 (888) 888-8888",
     "email" : "sales@greatidea.io",
   },
@@ -38,5 +38,57 @@ const siteContent = {
 };
 
 // Example: Update the img src for the logo
-let logo = document.getElementById("logo-img");
+let logo = document.getElementById("logo-img")
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+let navItems = document.querySelectorAll('a')
+
+for (let i = 0; i < navItems.length; i++){
+  navItems[i].textContent = (siteContent['nav'][`nav-item-${i+1}`])
+  navItems[i].style.color = "green"
+}
+console.log(navItems);
+
+
+
+
+let headerimage = document.getElementById('cta-img')
+headerimage.setAttribute('src', siteContent['cta']['img-src'])
+
+let mainheader = document.querySelector('h1')
+mainheader.innerHTML = ('src', siteContent['cta']['h1'])
+
+let buttontext = document.querySelector('button')
+buttontext.textContent = (siteContent['cta']['button'])
+
+let topheaders = document.querySelectorAll('.text-content h4')
+topheaders[0].textContent = (siteContent["main-content"]["features-h4"])
+topheaders[1].textContent = (siteContent["main-content"]["about-h4"])
+
+let topcontent = document.querySelectorAll('.top-content .text-content p')
+topcontent[0].textContent = (siteContent["main-content"]["features-content"])
+topcontent[1].textContent = (siteContent["main-content"]["about-content"])
+
+let centerimage = document.getElementById("middle-img")
+centerimage.setAttribute('src', siteContent["main-content"]["middle-img-src"])
+
+let bottomheaders = document.querySelectorAll('.bottom-content h4')
+bottomheaders[0].textContent = (siteContent["main-content"]["services-h4"])
+bottomheaders[1].textContent = (siteContent["main-content"]["product-h4"])
+bottomheaders[2].textContent = (siteContent["main-content"]["vision-h4"])
+
+let bottomcontent = document.querySelectorAll('.bottom-content .text-content p')
+bottomcontent[0].textContent = (siteContent["main-content"]["services-content"])
+bottomcontent[1].textContent = (siteContent["main-content"]["product-content"])
+bottomcontent[2].textContent = (siteContent["main-content"]["vision-content"])
+
+let contactheader = document.querySelector('.contact h4')
+contactheader.textContent = (siteContent['contact']['contact-h4'])
+
+let contactinfo = document.querySelectorAll('.contact p')
+contactinfo[0].innerHTML = (siteContent['contact']['address'])
+contactinfo[1].textContent = (siteContent['contact']['phone'])
+contactinfo[2].textContent = (siteContent['contact']['email'])
+
+let footer = document.querySelector('footer p')
+footer.textContent = (siteContent['footer']['copyright'])
